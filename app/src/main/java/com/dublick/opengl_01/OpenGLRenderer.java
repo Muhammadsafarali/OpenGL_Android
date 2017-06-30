@@ -48,7 +48,17 @@ public class OpenGLRenderer implements Renderer {
     private void prepareData() {
         float[] vertices = {
                 // треугльник 1
-                -0.5f, -0.2f, 0.0f, 0.2f, 0.5f, -0.2f,};
+                -0.9f, 0.8f, -0.9f, 0.2f, -0.5f, 0.8f,
+
+                // треугольник 2
+                -0.6f, 0.2f, -0.2f, 0.2f, -0.2f, 0.8f,
+
+                // треугольник 3
+                0.1f, 0.8f, 0.1f, 0.2f, 0.5f, 0.8f,
+
+                // треугольник 4
+                0.1f, 0.2f, 0.5f, 0.2f, 0.5f, 0.8f,
+        };
 
         vertexData = ByteBuffer.allocateDirect(vertices.length * 4).order(ByteOrder.nativeOrder()).asFloatBuffer();
         vertexData.put(vertices);
@@ -56,7 +66,7 @@ public class OpenGLRenderer implements Renderer {
 
     private void bindData() {
         uColorLocation = glGetUniformLocation(programId, "u_Color");
-        glUniform4f(uColorLocation, 0.0f, 0.0f, 1.0f, 1.0f);
+        glUniform4f(uColorLocation, 1.0f, 0.0f, 0.2f, 1.0f);
         aPositionLocation = glGetAttribLocation(programId, "a_Position");
         vertexData.position(0);
         glVertexAttribPointer(aPositionLocation, 2, GL_FLOAT, false, 0, vertexData);
@@ -71,7 +81,7 @@ public class OpenGLRenderer implements Renderer {
     @Override
     public void onDrawFrame(GL10 gl) {
         glClear(GL_COLOR_BUFFER_BIT);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        glDrawArrays(GL_TRIANGLES, 0, 12);
     }
 
     @Override
