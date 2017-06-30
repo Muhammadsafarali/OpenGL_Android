@@ -46,7 +46,10 @@ public class OpenGLRenderer implements Renderer {
     }
 
     private void prepareData() {
-        float[] vertices = {-0.5f, -0.2f, 0.0f, 0.2f, 0.5f, -0.2f,};
+        float[] vertices = {
+                // треугльник 1
+                -0.5f, -0.2f, 0.0f, 0.2f, 0.5f, -0.2f,};
+
         vertexData = ByteBuffer.allocateDirect(vertices.length * 4).order(ByteOrder.nativeOrder()).asFloatBuffer();
         vertexData.put(vertices);
     }

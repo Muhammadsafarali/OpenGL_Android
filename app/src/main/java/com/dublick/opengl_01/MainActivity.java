@@ -9,8 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 // STARTANDROID
-// Источник: http://startandroid.ru/ru/uroki/vse-uroki-spiskom/397-urok-168-opengl-vvedenie.html
-
+// Урок 168: http://startandroid.ru/ru/uroki/vse-uroki-spiskom/397-urok-168-opengl-vvedenie.html
+// Урок 169: http://startandroid.ru/ru/uroki/vse-uroki-spiskom/398-urok-169-opengl-shejdery.html
+// Урок 170: http://startandroid.ru/ru/uroki/vse-uroki-spiskom/399-urok-170-opengl-graficheskie-primitivy.html
 public class MainActivity extends AppCompatActivity {
 
     private GLSurfaceView glSurfaceView;
